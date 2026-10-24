@@ -35,7 +35,8 @@ def create_app(client_provider: Callable[[], WindDataClient] = get_elexon_client
     app = FastAPI(title="Wind forecast analysis API")
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173"],
+        # allow_origins=["http://localhost:5173"],
+        allow_origins=["https://wind-forecast-analysis-dun.vercel.app"],
         allow_credentials=False,
         allow_methods=["GET"],
         allow_headers=["Content-Type"],
